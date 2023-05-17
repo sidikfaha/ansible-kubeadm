@@ -1,0 +1,10 @@
+---
+- name: Setup docker
+  hosts: [workers, masters]
+  roles:
+    - docker
+
+- name: Setup kubeadm
+  hosts: [ workers, masters]
+  roles:
+    - kubernetes

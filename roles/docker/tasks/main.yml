@@ -1,0 +1,10 @@
+---
+- name: Install docker
+  become: false
+  shell:
+    cmd: curl -sSL https://get.docker.com | sh
+
+- name: Docker rootless
+  become: true
+  shell:
+    cmd: usermod -aG docker $USER
